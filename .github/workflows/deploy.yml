@@ -1,0 +1,48 @@
+name: Deploy Quartz site to Pages
+
+on:
+  push:
+    branches: ["main"] # Deploys from main branch
+  workflow_dispatch: # Allows manual deployment
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+      - name: Install dependencies
+        run: npm install
+      - name: Build Quartz
+        run: npx quartz build # <--- 看！这里就是最关键的构建命令
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public # <--- 这里指定了只上传 public 文件夹这个“成品”
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
