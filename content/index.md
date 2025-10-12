@@ -1,5 +1,5 @@
 ---
-title: Sheehan‘s Blog
+title: Home
 description: 主页
 tags:
   - 随笔
