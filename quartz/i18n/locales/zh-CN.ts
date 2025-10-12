@@ -58,6 +58,7 @@ export default {
     },
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes}分钟阅读`,
+      lastUpdatedLabel: "最后更新于",
     },
   },
   pages: {
