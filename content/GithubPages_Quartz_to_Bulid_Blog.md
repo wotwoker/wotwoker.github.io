@@ -1,5 +1,5 @@
 ---
-title: 基于github.io以及Quartz项目的个人博客搭建小白教程
+title: github pages + Quartz + Obsidian 小白终极博客搭建教程
 description: 主页
 tags:
   - 技术
@@ -14,24 +14,19 @@ date: 2025-10-12
 ### 1.1 创建github仓库
 官方的模板仓库地址为：[https://github.com/jackyzha0/quartz](https://github.com/jackyzha0/quartz)
 我们可以直接`Fork`或者`Use this template`创建一个新仓库，需要先登录自己的 Github 账号再进行操作。如下图，这个建议用`Use this template`（用一个全新的、独立的仓库来快速启动一个新项目，且不包含原有的提交历史）。
-
 ![use this template](https://s2.loli.net/2025/10/12/2b4claKSdnF3kDJ.png)
-
 
 然后进入下图界面，在 `Repository name` 输入框里，输入 `你的用户名.github.io`。（**注意**：必须严格按照这个格式，例如，如果你的用户名是 `xxx`，那么仓库名就是 `xxx.github.io`。）
 选择 `Public` (公开)，然后点击 `Create repository` 创建仓库。
-
 ![新建仓库](https://s2.loli.net/2025/10/12/cvlzF7TdH1NUnKI.png)
 ### 1.2 配置 SSH 密钥
 具体可看这这官方教程：[新增 SSH 密钥到 GitHub 帐户 - GitHub 文档](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 如下图所示，按照里面的这三步来就行，得到ssh密匙后，上github个人设置界面进行添加即可。
-
 ![image.png](https://s2.loli.net/2025/10/12/QC8fwiyvARZ5cs1.png)
 ![image.png](https://s2.loli.net/2025/10/12/SYHAN945clmFjEh.png)
 
 ## 2. 搭建你的本地博客
 在你的电脑上找一个合适的位置，打开终端。
-
 ![image.png](https://s2.loli.net/2025/10/12/y4joe8xu2htVKbM.png)
 
 依次输入以下指令来下载你仓库里的 Quartz 的模板代码
@@ -42,20 +37,16 @@ npm install
 npx quartz create
 ```
 ![如图所示](https://s2.loli.net/2025/10/12/nycgQPbCzG91vXd.png)
-
-
 ## 3. 在本地运行和写作
 运行以下命令，启动一个本地的开发服务器：
 ```bash
 npx quartz build --serve
 ```
-然后得到这个网址http://localhost:8080，如下图所示，按住`Ctrl`然后鼠标点击进去，就能预览你的网站了
-
+然后得到这个网址`http://localhost:8080`，如下图所示，按住`Ctrl`然后鼠标点击进去，就能预览你的网站了
 ![image.png](https://s2.loli.net/2025/10/12/jQtKa5lAi3XZGgf.png)
 
 你的所有博客文章都存放在 `content` 目录下，可以使用 Markdown 格式（`.md` 文件）来撰写你的文章。目前项目本身自带的这个index.md的文件就是你的主页。
 尝试修改 `content/index.md` 文件，保存后，本地预览的网页会自动刷新，就能看到修改后的效果在 `content` 目录下创建新的 `.md` 文件，每个文件都会成为一个新的页面。
-
 ## 4. 配置和部署到 GitHub Pages
 ### 4.1 配置部署脚本
 打开项目里的 `.github/workflows/ `文件夹，在这里新建一个`deploy.yml`文件，填入以下内容。
@@ -109,7 +100,6 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 ```
-
 ### 4.2 连接本地项目到你的 GitHub 仓库
 回到你的终端（确保在你的项目文件夹内）运行以下指令：
 ```bash
@@ -120,7 +110,6 @@ git branch -M main #将主分支命名为 `main`
 ### 4.3 **设置 GitHub Actions 用于自动部署**:
 在你的 GitHub 仓库页面，点击 **"Settings"** -> **"Pages"**。
 在 "Build and deployment" 下的 "Source" 部分，选择 **"GitHub Actions"**。
-
 ### 4.4 部署推送到博客站
 使用标准的“三步曲”来完成首次发布。
 ```bash
@@ -131,8 +120,12 @@ git commit -m "Initial commit: Setup Quartz blog"
 # 第三步：推送到 GitHub
 git push origin main
 ```
-
 在你项目的Actions界面看到绿色的勾，说明部署成功了，你可以通过`https://你的用户名.github.io/`，来访问你的网站。
 ![image.png](https://s2.loli.net/2025/10/12/xcEld7kbH4ISvr1.png)
 
 >如果显示部署失败，可以点进详情页，把错误信息反馈给AI，可能需补充几个设置，然后重新部署即可。
+
+## 参考文献:
+[Welcome to Quartz 4](https://quartz.jzhao.xyz/)
+[如果你也想有一个这样的网站 | yuew's notes](https://notes.yueweix.com/create-quartz-site#%E5%BC%80%E5%A7%8B%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%86%99%E4%BD%9C)
+[使用 Quartz 搭建博客 | 思想犯](https://virgiling.wiki/03-tools/blog-record#quartz-%E7%9A%84%E6%9E%84%E5%BB%BA)
