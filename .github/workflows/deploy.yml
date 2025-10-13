@@ -19,11 +19,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: "npm"
@@ -32,7 +32,7 @@ jobs:
       - name: Build Quartz
         run: npx quartz build # <--- 看！这里就是最关键的构建命令
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: public # <--- 这里指定了只上传 public 文件夹这个“成品”
 
