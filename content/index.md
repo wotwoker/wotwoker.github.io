@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Sheehan‘s Evergarden
 description: 主页
 tags:
   - 随笔
