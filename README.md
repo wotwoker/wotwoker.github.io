@@ -1,1 +1,1 @@
-这是我的个人博客。
+This is my personal bolg
