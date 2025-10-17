@@ -1,3 +1,17 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+.page {
+  max-width: none;                // 不再限制为居中的固定宽度
+  margin-left: 2.5rem !important; // 自己设定离视窗的距离
+  margin-right: 3.0rem;             // 按需留右边空白
+
+  #quartz-body {
+    column-gap: 1rem;           // 网格列之间的间距，可以继续调小
+  }
+
+  .sidebar.left {
+    padding-left: 0 !important;
+    margin-left: 0 !important;    // 确保紧贴你设定的 margin
+  }
+}

@@ -6,7 +6,8 @@ tags:
 date: 2025-10-12
 ---
 ## 准备工作
-1. 安装 Node.js，同时安装npm，自行搜索最新的安装以及配置教程。我是参考了[2025版 Node.js 下载安装及环境配置详细教程【保姆级】_nodejs2025淘宝镜像](https://blog.csdn.net/m0_66434421/article/details/147276925))，Quartz 4 项目对 Node 的版本要求比较高，至少需要 `v22`的版本，可上官网确认([Welcome to Quartz 4](https://quartz.jzhao.xyz/))
+1. 安装 Node.js，同时安装npm，自行搜索最新的安装以及配置教程。
+	>我是参考了[2025版 Node.js 下载安装及环境配置详细教程【保姆级】_nodejs2025淘宝镜像](https://blog.csdn.net/m0_66434421/article/details/147276925))，Quartz 4 项目对 Node 的版本要求比较高，至少需要 `v22`的版本，可上官网确认([Welcome to Quartz 4](https://quartz.jzhao.xyz/))
 2. 安装git，自行搜索教程，可参考[Git - 安装 Git](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git)
 3. github账号，自行注册。
 
@@ -49,7 +50,7 @@ npx quartz build --serve
 尝试修改 `content/index.md` 文件，保存后，本地预览的网页会自动刷新，就能看到修改后的效果在 `content` 目录下创建新的 `.md` 文件，每个文件都会成为一个新的页面。
 ## 4. 配置和部署到 GitHub Pages
 ### 4.1 配置部署脚本
-打开项目里的 `.github/workflows/ `文件夹，在这里新建一个`deploy.yml`文件，填入以下内容。
+打开项目里的 `.github/workflows/ `文件夹，在这里新建一个`deploy.yml`文件，填入以下内容。这样就可以不用每次本地`build`手动生成 `public/` 再发布，github会帮你自动化构建。
 ```yml
 name: Deploy Quartz site to Pages
 
