@@ -2,48 +2,78 @@
 
 // put your custom CSS here!
 .page {
-  //max-width: none; // 不再限制为居中的固定宽度
-  margin-left: 2.5rem !important; // 自己设定离视窗的距离
-  margin-right: 3rem; // 按需留右边空白
+  margin-left: 2rem !important;
+  margin-right: 2rem;
 
   #quartz-body {
-    column-gap: 1rem; // 网格列之间的间距，可以继续调整
+    column-gap: 1rem;
   }
 
   .sidebar.left {
     padding-left: 0 !important;
-    margin-left: 0 !important; // 确保紧贴你设定的 margin
+    margin-left: 0 !important;
   }
 }
+
 .page article img {
-  border-radius: 6px; // 图片边角柔和些
+  border-radius: 6px;
   transform-origin: center;
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-    filter 0.45s ease;
+    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1), filter 0.45s ease;
   will-change: transform, box-shadow;
 }
+
 .page article img:hover {
-  transform: scale(1.025) translateY(-2px); // 轻微放大并上移
+  transform: scale(1.025) translateY(-2px);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
   filter: brightness(1.04);
 }
 
-
 /* 文章中所有多行代码块 */
 .page article pre {
+  background-color: #e8ecf3;
+  border: none;
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
 
-  border: 2px solid rgba(103, 100, 100, 0.08);
-  border-radius: 10px;
-  padding: 0.75rem 1rem;
-}
 /* 有标题的代码块（Quartz 会生成 figure 包裹） */
-figure[data-rehype-pretty-code-figure] > pre {
-  background-color: inherit;      // 继承上面设置的颜色
+figure[data-rehype-pretty-code-figure] {
+  border-radius: 14px;
+  overflow: hidden;
+
+  & > [data-rehype-pretty-code-title] {
+    border: none;
+    background: rgba(255, 255, 255, 0.35);
+    padding: 0.35rem 0.8rem;
+    margin-bottom: 0;
+  }
+
+  & > pre {
+    background-color: inherit;
+  }
 }
+
 /* 如果想把 inline code 一起调 */
 .page article code:not([data-line]) {
-  background-color: rgba(0,0,0,0.06);
-  padding: 0.1rem 0.25rem;
+  background-color: rgba(0, 0, 0, 0.06);
+  padding: 0.12rem 0.3rem;
   border-radius: 4px;
+}
+
+/* Dark mode adjustments */
+body[data-theme="dark"] {
+  .page article pre {
+    background-color: #202733;
+    box-shadow: 0 12px 32px rgba(5, 8, 15, 0.45);
+  }
+
+  figure[data-rehype-pretty-code-figure] > [data-rehype-pretty-code-title] {
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .page article code:not([data-line]) {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
 }
