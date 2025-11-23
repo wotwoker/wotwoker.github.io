@@ -93,9 +93,37 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/posts/hello-valaxy': RouteRecordInfo<
-      '/posts/hello-valaxy',
-      '/posts/hello-valaxy',
+    '/posts/Life-Essays/Am_I_into_light_yuri': RouteRecordInfo<
+      '/posts/Life-Essays/Am_I_into_light_yuri',
+      '/posts/Life-Essays/Am_I_into_light_yuri',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/Life-Essays/I_really_love_RADWIMPS——happy_20th_anniversary!': RouteRecordInfo<
+      '/posts/Life-Essays/I_really_love_RADWIMPS——happy_20th_anniversary!',
+      '/posts/Life-Essays/I_really_love_RADWIMPS——happy_20th_anniversary!',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/TechNotes/github_pages+Quartz+Obsidian_to_bulid_your_Blog': RouteRecordInfo<
+      '/posts/TechNotes/github_pages+Quartz+Obsidian_to_bulid_your_Blog',
+      '/posts/TechNotes/github_pages+Quartz+Obsidian_to_bulid_your_Blog',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/TechNotes/Hello_Valaxy': RouteRecordInfo<
+      '/posts/TechNotes/Hello_Valaxy',
+      '/posts/TechNotes/Hello_Valaxy',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/TechNotes/Introductory C Programming Specialization': RouteRecordInfo<
+      '/posts/TechNotes/Introductory C Programming Specialization',
+      '/posts/TechNotes/Introductory C Programming Specialization',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -180,9 +208,33 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'pages/posts/hello-valaxy.md': {
+    'pages/posts/Life-Essays/Am_I_into_light_yuri.md': {
       routes:
-        | '/posts/hello-valaxy'
+        | '/posts/Life-Essays/Am_I_into_light_yuri'
+      views:
+        | never
+    }
+    'pages/posts/Life-Essays/I_really_love_RADWIMPS——happy_20th_anniversary!.md': {
+      routes:
+        | '/posts/Life-Essays/I_really_love_RADWIMPS——happy_20th_anniversary!'
+      views:
+        | never
+    }
+    'pages/posts/TechNotes/github_pages+Quartz+Obsidian_to_bulid_your_Blog.md': {
+      routes:
+        | '/posts/TechNotes/github_pages+Quartz+Obsidian_to_bulid_your_Blog'
+      views:
+        | never
+    }
+    'pages/posts/TechNotes/Hello_Valaxy.md': {
+      routes:
+        | '/posts/TechNotes/Hello_Valaxy'
+      views:
+        | never
+    }
+    'pages/posts/TechNotes/Introductory C Programming Specialization.md': {
+      routes:
+        | '/posts/TechNotes/Introductory C Programming Specialization'
       views:
         | never
     }
