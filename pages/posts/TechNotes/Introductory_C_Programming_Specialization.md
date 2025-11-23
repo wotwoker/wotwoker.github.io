@@ -1,3 +1,13 @@
+---
+title: Introductory C Programming Specialization 学习笔记
+date: 2025-11-23
+updated: 2025-11-23
+categories: 课程笔记
+tags:
+  - 课程
+  - 笔记
+---
+
 ## Course 1: Programming Fundamentals
 ### Module 1: Introduction
 - Programming: Plan First, Then Code

@@ -121,9 +121,9 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/posts/TechNotes/Introductory C Programming Specialization': RouteRecordInfo<
-      '/posts/TechNotes/Introductory C Programming Specialization',
-      '/posts/TechNotes/Introductory C Programming Specialization',
+    '/posts/TechNotes/Introductory_C_Programming_Specialization': RouteRecordInfo<
+      '/posts/TechNotes/Introductory_C_Programming_Specialization',
+      '/posts/TechNotes/Introductory_C_Programming_Specialization',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -232,9 +232,9 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'pages/posts/TechNotes/Introductory C Programming Specialization.md': {
+    'pages/posts/TechNotes/Introductory_C_Programming_Specialization.md': {
       routes:
-        | '/posts/TechNotes/Introductory C Programming Specialization'
+        | '/posts/TechNotes/Introductory_C_Programming_Specialization'
       views:
         | never
     }
