@@ -18,3 +18,5 @@ node_modules
 *.log
 
 components.d.ts
+# 忽略 Obsidian 配置
+pages/posts/.obsidian/
