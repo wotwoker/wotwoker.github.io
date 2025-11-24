@@ -1,7 +1,7 @@
 import { defineSiteConfig } from 'valaxy'
 
 export default defineSiteConfig({
-  url: 'https://valaxy.site/',
+  url: 'https://wotwoker.github.io/',
   lang: 'zh-CN',
   title: 'Flowing Lantingarden',
   subtitle: '兰亭流水集',

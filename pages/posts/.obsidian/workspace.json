@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TechNotes/Hello_Valaxy.md",
+                "file": "TechNotes/Introductory_C_Programming_Specialization_Course1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Hello_Valaxy"
+              "title": "Introductory_C_Programming_Specialization_Course1"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TechNotes/Hello_Valaxy.md",
+                "file": "TechNotes/Introductory_C_Programming_Specialization_Course1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Hello_Valaxy 的反向链接列表"
+              "title": "Introductory_C_Programming_Specialization_Course1 的反向链接列表"
             }
           },
           {
@@ -142,16 +142,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TechNotes/Hello_Valaxy.md",
+                "file": "TechNotes/Introductory_C_Programming_Specialization_Course1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Hello_Valaxy 的大纲"
+              "title": "Introductory_C_Programming_Specialization_Course1 的大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -168,14 +169,14 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "c3ad4bd43cd87be9",
+  "active": "91483fc835906772",
   "lastOpenFiles": [
-    "TechNotes/Introductory_C_Programming_Specialization.md",
+    "TechNotes/Hello_Valaxy.md",
+    "TechNotes/Introductory_C_Programming_Specialization_Course1.md",
     "TechNotes/Introductory C Programming Specialization.md",
     "TechNotes/github_pages+Quartz+Obsidian_to_bulid_your_Blog.md",
     "Life-Essays/I_really_love_RADWIMPS——happy_20th_anniversary!.md",
     "Life-Essays/Am_I_into_light_yuri.md",
-    "TechNotes/Hello_Valaxy.md",
     "Life-Essays",
     "L.md",
     "TechNotes"

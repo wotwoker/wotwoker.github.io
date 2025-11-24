@@ -1,5 +1,5 @@
 ---
-title: Introductory C Programming Specialization 学习笔记
+title: "Introductory C Programming Specialization 学习笔记——Course 1: Programming Fundamentals"
 date: 2025-11-23
 updated: 2025-11-23
 categories: 课程笔记
@@ -8,8 +8,7 @@ tags:
   - 笔记
 ---
 
-## Course 1: Programming Fundamentals
-### Module 1: Introduction
+## Module 1: Introduction
 - Programming: Plan First, Then Code
 - ![high-level overview of the programming process](https://s2.loli.net/2025/11/17/1uVUWzbE9GOS7Pp.png)
 - ![a disciplined fashion of devising algorithm](https://s2.loli.net/2025/11/17/3mq5L6pI8taldwF.png)
@@ -25,7 +24,7 @@ Whenever we detect problems with our algorithm in Step 4, we typically want to r
 >The reasons that novice programmers give for skipping straight to step 5 vary, but a common one is "Step 3 (writing a generalized algorithm) seemed too hard." This reason is quite possibly the _worst_ reason to skip over step 3—if making a correct plan is proving hard, how can you possibly hope to write correct code without the plan?
 >As you become more and more practiced at this process, you may find that steps 1–4 come naturally, and you can do them in your head without writing them down—much like what happens with basic mathematical skills.
 
-### Module 2: Reading Code
+## Module 2: Reading Code
 variables, declarations, assianments, operators:  
 ```C
 // declare a variable
@@ -169,7 +168,7 @@ int main(void){
 }
 ```
 
-### Module 3: Types
+## Module 3: Types
 A type is a programming language construct that specifies both a size and an interpretation of a series of bits stored in a computer.
 
 ![由抽象到具体 looking under the hood](https://s2.loli.net/2025/11/20/4yQsaLThDBkFfwH.png)
@@ -318,7 +317,7 @@ int main(void) {
 }
 ```
 
-### Module 4: Project
+## Module 4: Project
 **sorting algorithm** (Bubble Sort)
 1. Let N = length of the input list (number of elements to sort).
 2. For k from 1 to N-1 (outer loop: controls sorting passes):
@@ -329,12 +328,9 @@ int main(void) {
     - Set `swapped = True` (mark that a swap occurred).  
     c. (Optional Early Exit) If `swapped` remains `False` after the inner loop: break all loops (list is fully sorted).
     
-### 课程1评价
+## 课程1心得感悟
 课程安排非常好，reading的部分比较基础但是同样有一定的广度拓展，video的部分会举一些进阶的例子，同时验证了reading里随笔一提拓展知识，而不是单纯的重复强调。这种内容安排会一直源源不断地给我刺激，即使是第一课，主要就是概念和总体思路，但就是让人感觉学的停不下来。  
 
 上次学C还是大一的时候，大都忘了，这次用英文材料学，对基本概念的理解更加通透一点了，尤其是字符类型、结构体、typedef，第一次学的时候理解有挺多障碍，现在好多了。
 
-Course1 complecated in six days.
-——23/11/2025
-
-## Course 2: Writing, Running, and Fixing Code in C
+Course 1 was completed in six days.
