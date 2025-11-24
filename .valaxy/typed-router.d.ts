@@ -121,9 +121,16 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/posts/TechNotes/Introductory_C_Programming_Specialization': RouteRecordInfo<
-      '/posts/TechNotes/Introductory_C_Programming_Specialization',
-      '/posts/TechNotes/Introductory_C_Programming_Specialization',
+    '/posts/TechNotes/Introductory_C_Programming_Specialization_Course1': RouteRecordInfo<
+      '/posts/TechNotes/Introductory_C_Programming_Specialization_Course1',
+      '/posts/TechNotes/Introductory_C_Programming_Specialization_Course1',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/TechNotes/Introductory_C_Programming_Specialization_Course2': RouteRecordInfo<
+      '/posts/TechNotes/Introductory_C_Programming_Specialization_Course2',
+      '/posts/TechNotes/Introductory_C_Programming_Specialization_Course2',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -232,9 +239,15 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'pages/posts/TechNotes/Introductory_C_Programming_Specialization.md': {
+    'pages/posts/TechNotes/Introductory_C_Programming_Specialization_Course1.md': {
       routes:
-        | '/posts/TechNotes/Introductory_C_Programming_Specialization'
+        | '/posts/TechNotes/Introductory_C_Programming_Specialization_Course1'
+      views:
+        | never
+    }
+    'pages/posts/TechNotes/Introductory_C_Programming_Specialization_Course2.md': {
+      routes:
+        | '/posts/TechNotes/Introductory_C_Programming_Specialization_Course2'
       views:
         | never
     }

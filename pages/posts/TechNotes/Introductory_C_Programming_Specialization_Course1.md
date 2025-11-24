@@ -19,7 +19,7 @@ write down the steps to solve _that particular instance_
 - **Step 3: Generalize Your Steps**  
 generalize those steps into an algorithm, and get the 'pseudo-code'  
 - **Step 4: Test Your Algorithm**  
-Whenever we detect problems with our algorithm in Step 4, we typically want to return to Steps 1 and 2 to get more information to generalize from.（it is fine to fix it right away without redoing Steps 1 and 2, if it is easy)  
+Whenever we detect problems with our algorithm in Step 4, we typically want to return to Steps 1 and 2 to get more information to generalize from. (it is fine to fix it right away without redoing Steps 1 and 2, if it is easy)  
 
 >The reasons that novice programmers give for skipping straight to step 5 vary, but a common one is "Step 3 (writing a generalized algorithm) seemed too hard." This reason is quite possibly the _worst_ reason to skip over step 3—if making a correct plan is proving hard, how can you possibly hope to write correct code without the plan?
 >As you become more and more practiced at this process, you may find that steps 1–4 come naturally, and you can do them in your head without writing them down—much like what happens with basic mathematical skills.
