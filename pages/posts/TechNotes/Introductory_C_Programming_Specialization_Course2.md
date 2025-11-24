@@ -10,16 +10,17 @@ tags:
 
 ## Module 1: Writing Code
 
+### Revisiting four steps of devising algorithm
 **Revisiting Step 1:**    
 The first step to devising an algorithm is to work an instance of the problem yourself. However, you have to not only be able to do the problem, but also do it methodically enough that you can analyze what you did and generalize it.    
 
 **Revisiting Step 2:**    
 Write Down What You Just Did. (for example, that the price of bread , we will have to find a way to properly _represent_ a rectangle using a number (or several))   
 
-**Step 3: Generalizing Values**, Repetitions，     
+**Step 3: Generalizing Values, Repetitions, Conditional Behavior**     
 we need to generalize to all instances of the problem, think about _why_ you did what you did, recognize patterns, and figure out how to deal with any possible inputs.   
 
-![使用错误的算法得到错误的实例](../pic/Pasted%20image%2020251124144405.png)
+![使用错误的算法得到错误的实例](./pic/Pasted%20image%2020251124144405.png)
 
 >**To find the intersection of two rectangles, r1 and r2:**  
 >**Make a rectangle (called ans) with**  
@@ -30,5 +31,11 @@ we need to generalize to all instances of the problem, think about _why_ you did
 >
 >**That rectangle called ans is your answer.**  
 
+**Revisiting Step 4: Test Your Algorithm**    
+Once you have generalized your Algorithm, it is time to test it out——enough different testing to give you confidence that your algorithm is correct before you proceed, but not an excessive amount of testing.
+- Try test cases that are qualitatively different from what you used to design your algorithm.
+- Try to find _corner cases_—inputs where your algorithm behaves differently.
+- Try to obtain _statement coverage_—that is, between all of your test cases, each line in the algorithm should be executed at least once.
+- Examine your algorithm and see if there are any apparent oddities in its behavior
 
 
