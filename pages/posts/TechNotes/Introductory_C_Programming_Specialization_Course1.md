@@ -62,7 +62,7 @@ int main(void){
 }
 ```
 
-**Conditional Statements**
+**Conditional Statements**    
 To write meaningful if/else statements, we need to introduce operators which allow us to compare two expressions and produce a Boolean outcome.  
 ![operators for conditional expressions](https://s2.loli.net/2025/11/19/IiJdrNgyYcRUbZk.png)
 
@@ -147,7 +147,7 @@ the do-while loop checks its conditional expression at the bottom of the loop—
 notice that there is a set of curly braces around the entire piece of while-based code.  
 ![for loop de-sugars to a while loop](https://s2.loli.net/2025/11/20/qB9ocCKvYUzHVdG.png)
 
-**Continue and Break**  
+**Continue and Break**    
 Sometimes a programmer wants to leave the loop body early, rather than finishing all of the statements in side of it.  
 Whenever the execution arrow encounters a break statement, it executes the statement by jumping out of the innermost enclosing loop (whether it is a while, do-while, or for loop), or switch statement.  
 Executing the continue statement jumps to the top of the innermost enclosing loop (if it is not in a loop, it is an error).*In the case of a for loop, the “increment statement” in the for loop is executed immediately before the jump.*  
@@ -185,7 +185,7 @@ At first glance of the figure below, c and x appear identical since they both ha
 
 ![Examples of chars and ints](https://s2.loli.net/2025/11/20/8xNUd2YnHPkVLFC.png)
 
-Specifically, all numbers with **the most significant bit equal to 1 are negative numbers**.
+Specifically, all numbers with **the most significant bit equal to 1 are negative numbers**.  
 A 32-bit int is inherently signed (i.e., can have both positive and negative values) and can express values from -2,147,483,648 to 2,147,483,647.  
 Note that both **unsigned and signed ints** have 2^{32} possible values. For the unsigned int they are all positive; for the signed int, half are positive and half are negative.  
 
@@ -239,19 +239,19 @@ int main(void) {
 }
 ```
 
-**Overflow and Underflow**  
+**Overflow and Underflow**    
 For example, a **short** is typically 16 bits, meaning it can express exactly 2^16 possible values. If these values are split between positive and negative numbers, then the largest possible number that can be stored in a short is 0111111111111111, or 32767. Adding 1 yields an unsurprising 1000000000000000. The bit pattern is expected. But the interpretation of a signed short with this bit pattern is -32768  
 
 [![overflow comic](https://s2.loli.net/2025/11/21/SI1MC2D4OtvkKxa.png)](https://xkcd.com/571/)
 
 _“Non-numbers", i.e., strings, images, sound and video, actually are numbers._  
 
-**Strings**  
+**Strings**    
 To truly understand how to create and use strings, an understanding of **pointers** is required.  
 
 ![_null terminator_ at the end of a string](https://s2.loli.net/2025/11/21/MDi9PrSoHbtyjz8.png)
 
-**Structs**  
+**Structs**    
 A _struct_ allows a programmer to bundle multiple variables into a single entity.  
 
 ![struct captures the basic properties](https://s2.loli.net/2025/11/21/Iw2A16TJH9PDNKL.png)
@@ -267,7 +267,7 @@ typedefs can simplify the use of structs, also can help you make your code more 
 
 ==上图例子就是将 unsigned int 定义为 rgb_t。然后直接用rgb_t来定义函数或者变量的类型。==  
 
-**enumerated type**  
+**enumerated type**    
 ```c
 enum threat_level_t { // 定义一个枚举类型，每个级别都被赋予一个常量值，从 0 开始。
   LOW, // Their values cannot **change** throughout the program.
