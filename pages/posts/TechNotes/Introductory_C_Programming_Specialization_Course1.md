@@ -9,30 +9,30 @@ tags:
 ---
 
 ## Module 1: Introduction
-- Programming: Plan First, Then Code
+- Programming: Plan First, Then Code  
 - ![high-level overview of the programming process](https://s2.loli.net/2025/11/17/1uVUWzbE9GOS7Pp.png)
 - ![a disciplined fashion of devising algorithm](https://s2.loli.net/2025/11/17/3mq5L6pI8taldwF.png)
-- **Step 1: Work an Example Yourself** 
-design an algorithm is to work at least one instance of the problem
-- **Step 2: Write Down What You Just Did** 
-write down the steps to solve _that particular instance_
-- **Step 3: Generalize Your Steps**
-generalize those steps into an algorithm, and get the 'pseudo-code'
-- **Step 4: Test Your Algorithm**
-Whenever we detect problems with our algorithm in Step 4, we typically want to return to Steps 1 and 2 to get more information to generalize from.（it is fine to fix it right away without redoing Steps 1 and 2, if it is easy)
+- **Step 1: Work an Example Yourself**  
+design an algorithm is to work at least one instance of the problem  
+- **Step 2: Write Down What You Just Did**  
+write down the steps to solve _that particular instance_  
+- **Step 3: Generalize Your Steps**  
+generalize those steps into an algorithm, and get the 'pseudo-code'  
+- **Step 4: Test Your Algorithm**  
+Whenever we detect problems with our algorithm in Step 4, we typically want to return to Steps 1 and 2 to get more information to generalize from.（it is fine to fix it right away without redoing Steps 1 and 2, if it is easy)  
 
 >The reasons that novice programmers give for skipping straight to step 5 vary, but a common one is "Step 3 (writing a generalized algorithm) seemed too hard." This reason is quite possibly the _worst_ reason to skip over step 3—if making a correct plan is proving hard, how can you possibly hope to write correct code without the plan?
 >As you become more and more practiced at this process, you may find that steps 1–4 come naturally, and you can do them in your head without writing them down—much like what happens with basic mathematical skills.
 
 ## Module 2: Reading Code
-variables, declarations, assianments, operators:  
+variables, declarations, assianments, operators:    
 ```C
 // declare a variable
 int myVariable; // variable's type variable's name ends with semicolon
 myVariable = 3; // Assigning a Variable，lvalue = rvalue;
 int x = 3; // Declarations and Assignments
 ```
-Function：
+Function：  
 ```C
 // declare a function
 int myFunction(int x, int y){ 
@@ -47,11 +47,11 @@ int main(void){
 }
 ```
 
-In C, the scope of a local variable begins with its declaration and ends at the closing curly-brace (}), which closes the block of code—the code between matching open and close curly braces—that the variable was declared in.
+In C, the scope of a local variable begins with its declaration and ends at the closing curly-brace (}), which closes the block of code—the code between matching open and close curly braces—that the variable was declared in.  
 
 ![the scope of a local variable，局部变量的作用域](https://s2.loli.net/2025/11/19/NOBxMYKPiJUmjgX.png)
 
-printf function
+printf function  
 ```c
 int main(void){
 	int a = 42;
@@ -63,11 +63,10 @@ int main(void){
 ```
 
 **Conditional Statements**
-To write meaningful if/else statements, we need to introduce operators which allow us to compare two expressions and produce a Boolean outcome.
-
+To write meaningful if/else statements, we need to introduce operators which allow us to compare two expressions and produce a Boolean outcome.  
 ![operators for conditional expressions](https://s2.loli.net/2025/11/19/IiJdrNgyYcRUbZk.png)
 
-- if/else statements
+- if/else statements  
 ```c
 int f(int x, int y){
 	if(x < y){
@@ -90,8 +89,8 @@ int main(void){
 }
 ```
 
-- switch/case
-Note that reaching another case label does not end the current case. Unless the execution arrow encounters break, execution continues from one statement to the next. When the execution arrow passes from one case into the next like this, it is called “falling through” into the next case.
+- switch/case  
+Note that reaching another case label does not end the current case. Unless the execution arrow encounters break, execution continues from one statement to the next. When the execution arrow passes from one case into the next like this, it is called “falling through” into the next case.  
 ```c
 int g(int n, int x){
 	switch(x + n){
@@ -117,12 +116,12 @@ int main(void){
 }
 ```
 
-C (and many other programming languages) has shorthand—also called _syntactic sugar_—for a variety of common operations.
+C (and many other programming languages) has shorthand—also called _syntactic sugar_—for a variety of common operations.  
 
 ![syntactic sugar](https://s2.loli.net/2025/11/20/TX92aE3p65ZflNg.png)
 
-**Loops for repetition**
-- While loops
+**Loops for repetition**  
+- While loops  
 ```c
 int g(int a, int b){
 	int total = 0;
@@ -142,16 +141,16 @@ int main(void){
 }
 ```
 
-- do/while loops
+- do/while loops  
 the do-while loop checks its conditional expression at the bottom of the loop—after it has executed the body.A while loop may execute its body zero times, skipping the entire loop, if the condition is false initially. By contrast, a **do-while loop is guaranteed to execute its body at least once** because it executes the loop body before ever checking the condition.
-- for loops 
-notice that there is a set of curly braces around the entire piece of while-based code.
+- for loops   
+notice that there is a set of curly braces around the entire piece of while-based code.  
 ![for loop de-sugars to a while loop](https://s2.loli.net/2025/11/20/qB9ocCKvYUzHVdG.png)
 
-**Continue and Break**
-Sometimes a programmer wants to leave the loop body early, rather than finishing all of the statements in side of it.
-Whenever the execution arrow encounters a break statement, it executes the statement by jumping out of the innermost enclosing loop (whether it is a while, do-while, or for loop), or switch statement.
-Executing the continue statement jumps to the top of the innermost enclosing loop (if it is not in a loop, it is an error).*In the case of a for loop, the “increment statement” in the for loop is executed immediately before the jump.*
+**Continue and Break**  
+Sometimes a programmer wants to leave the loop body early, rather than finishing all of the statements in side of it.  
+Whenever the execution arrow encounters a break statement, it executes the statement by jumping out of the innermost enclosing loop (whether it is a while, do-while, or for loop), or switch statement.  
+Executing the continue statement jumps to the top of the innermost enclosing loop (if it is not in a loop, it is an error).*In the case of a for loop, the “increment statement” in the for loop is executed immediately before the jump.*  
 ```c
 void printRemainders(int lo, int hi, int n){
 	for(int i = lo; i < hi; i++){
@@ -169,39 +168,38 @@ int main(void){
 ```
 
 ## Module 3: Types
-A type is a programming language construct that specifies both a size and an interpretation of a series of bits stored in a computer.
+A type is a programming language construct that specifies both a size and an interpretation of a series of bits stored in a computer.  
 
 ![由抽象到具体 looking under the hood](https://s2.loli.net/2025/11/20/4yQsaLThDBkFfwH.png)
->The leading **0x** (interchangeable with just x) indicates that the number is in hex.
+>The leading **0x** (interchangeable with just x) indicates that the number is in hex.  
 
-**Binary Numbers**
->“There are 10 types of people in the world. Those who understand binary and those who do not.”
+**Binary Numbers**  
+>“There are 10 types of people in the world. Those who understand binary and those who do not.”  
 
 ![ Decimal & Binary](https://s2.loli.net/2025/11/20/U6DdlikH1F5BTqh.png)
 
-C supports a very small number of data types，there are the basic types.
-
+C supports a very small number of data types，there are the basic types.  
 ![Basic Data Types](https://s2.loli.net/2025/11/20/DezayJmr27ILO6B.png)
 
-At first glance of the figure below, c and x appear identical since they both have the binary value 65. However, they differ in both **size** (c has only 8 bits whereas x has 32) and **interpretation** (c’s value is interpreted using ASCII encoding whereas x’s value is interpreted as an integer). Similarly, y and z are identical in hardware but have differing interpretations because y is unsigned and z is not.
+At first glance of the figure below, c and x appear identical since they both have the binary value 65. However, they differ in both **size** (c has only 8 bits whereas x has 32) and **interpretation** (c’s value is interpreted using ASCII encoding whereas x’s value is interpreted as an integer). Similarly, y and z are identical in hardware but have differing interpretations because y is unsigned and z is not.  
 
 ![Examples of chars and ints](https://s2.loli.net/2025/11/20/8xNUd2YnHPkVLFC.png)
 
 Specifically, all numbers with **the most significant bit equal to 1 are negative numbers**.
-A 32-bit int is inherently signed (i.e., can have both positive and negative values) and can express values from -2,147,483,648 to 2,147,483,647.
-Note that both **unsigned and signed ints** have 2^{32} possible values. For the unsigned int they are all positive; for the signed int, half are positive and half are negative.
+A 32-bit int is inherently signed (i.e., can have both positive and negative values) and can express values from -2,147,483,648 to 2,147,483,647.  
+Note that both **unsigned and signed ints** have 2^{32} possible values. For the unsigned int they are all positive; for the signed int, half are positive and half are negative.  
 
-In **two's complement**, the process for negating a number may seem a bit weird, but actually makes a lot of sense when you understand why it is setup this way. To compute negative X, you take the bits for X, **flip them (turn 0s into 1s and 1s into 0s), and then add 1**. So if you had 4-bit binary and took the number 5 (0101) and wanted negative 5, you would first flip the bits (1010) and then add 1 (1011). Why would computer scientists pick such a strange rule? It turns out that this rule makes it so that you can just add numbers naturally and get the right result whether the numbers are positive or negative. For example -5 + 1 = -4, and in binary 1011 + 0001 is 1100. To see that 1100 is -4, flip the bits (0011) and add 1 (0100) which is 4.
+In **two's complement**, the process for negating a number may seem a bit weird, but actually makes a lot of sense when you understand why it is setup this way. To compute negative X, you take the bits for X, **flip them (turn 0s into 1s and 1s into 0s), and then add 1**. So if you had 4-bit binary and took the number 5 (0101) and wanted negative 5, you would first flip the bits (1010) and then add 1 (1011). Why would computer scientists pick such a strange rule? It turns out that this rule makes it so that you can just add numbers naturally and get the right result whether the numbers are positive or negative. For example -5 + 1 = -4, and in binary 1011 + 0001 is 1100. To see that 1100 is -4, flip the bits (0011) and add 1 (0100) which is 4.  
 
-Computers use floating point notation, the same notation but implicitly in base 2: m\times 2^{e}.
+Computers use floating point notation, the same notation but implicitly in base 2: m\times 2^{e}.  
 
 ![float and double](https://s2.loli.net/2025/11/21/bczUFPDBZ3jo17J.png)
 
-It is important for programmers to understand precision and the cost.
+It is important for programmers to understand precision and the cost.  
 
 ![image.png](https://s2.loli.net/2025/11/21/gmwE1np2SO4RoXP.png)
 
-various **format specifiers** for the function printf.
+various **format specifiers** for the function printf.  
 
 ![the most common specifiers](https://s2.loli.net/2025/11/21/yYGV65zjUCQaO3J.png)
 
@@ -224,8 +222,8 @@ printf("33 as a letter is %c\n", age);
 //33 as a letter is！
 ```
 
-**type conversion** or type promotion（类型转换，编译器自动处理）
-**Casting**（强制类型转换，手动设定）
+**type conversion** or type promotion（类型转换，编译器自动处理）  
+**Casting**（强制类型转换，手动设定）  
 
 ```c
 int main(void) {
@@ -241,35 +239,35 @@ int main(void) {
 }
 ```
 
-**Overflow and Underflow**
-For example, a **short** is typically 16 bits, meaning it can express exactly 2^16 possible values. If these values are split between positive and negative numbers, then the largest possible number that can be stored in a short is 0111111111111111, or 32767. Adding 1 yields an unsurprising 1000000000000000. The bit pattern is expected. But the interpretation of a signed short with this bit pattern is -32768
+**Overflow and Underflow**  
+For example, a **short** is typically 16 bits, meaning it can express exactly 2^16 possible values. If these values are split between positive and negative numbers, then the largest possible number that can be stored in a short is 0111111111111111, or 32767. Adding 1 yields an unsurprising 1000000000000000. The bit pattern is expected. But the interpretation of a signed short with this bit pattern is -32768  
 
 [![overflow comic](https://s2.loli.net/2025/11/21/SI1MC2D4OtvkKxa.png)](https://xkcd.com/571/)
 
-_“Non-numbers", i.e., strings, images, sound and video, actually are numbers._
+_“Non-numbers", i.e., strings, images, sound and video, actually are numbers._  
 
-**Strings**
-To truly understand how to create and use strings, an understanding of **pointers** is required.
+**Strings**  
+To truly understand how to create and use strings, an understanding of **pointers** is required.  
 
 ![_null terminator_ at the end of a string](https://s2.loli.net/2025/11/21/MDi9PrSoHbtyjz8.png)
 
-**Structs**
-A _struct_ allows a programmer to bundle multiple variables into a single entity.
+**Structs**  
+A _struct_ allows a programmer to bundle multiple variables into a single entity.  
 
 ![struct captures the basic properties](https://s2.loli.net/2025/11/21/Iw2A16TJH9PDNKL.png)
 
-The figure below shows four different syntactic options that all create the same conceptual struct.
+The figure below shows four different syntactic options that all create the same conceptual struct.  
 
 ![four different syntactic options of structs](https://s2.loli.net/2025/11/21/ybI5KY4gJV2o8iv.png)
 
-**Typedef**
-typedefs can simplify the use of structs, also can help you make your code more readable, by *naming a type according to its meaning and use*. Use typedefs when the abstraction simplifies rather than obfuscates your code.
+**Typedef**  
+typedefs can simplify the use of structs, also can help you make your code more readable, by *naming a type according to its meaning and use*. Use typedefs when the abstraction simplifies rather than obfuscates your code.  
 
 ![image.png](https://s2.loli.net/2025/11/21/iknWfXohlPETKUg.png)
 
-==上图例子就是将 unsigned int 定义为 rgb_t。然后直接用rgb_t来定义函数或者变量的类型。==
+==上图例子就是将 unsigned int 定义为 rgb_t。然后直接用rgb_t来定义函数或者变量的类型。==  
 
-**enumerated type**
+**enumerated type**  
 ```c
 enum threat_level_t { // 定义一个枚举类型，每个级别都被赋予一个常量值，从 0 开始。
   LOW, // Their values cannot **change** throughout the program.
@@ -317,8 +315,8 @@ int main(void) {
 }
 ```
 
-## Module 4: Project
-**sorting algorithm** (Bubble Sort)
+## Module 4: Project  
+**sorting algorithm** (Bubble Sort)  
 1. Let N = length of the input list (number of elements to sort).
 2. For k from 1 to N-1 (outer loop: controls sorting passes):
     a. Initialize a flag `swapped = False` (tracks if any swaps happen in this pass).
