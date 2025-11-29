@@ -317,14 +317,14 @@ int main(void) {
 
 ## Module 4: Project  
 **sorting algorithm** (Bubble Sort)  
-1. Let N = length of the input list (number of elements to sort).
-2. For k from 1 to N-1 (outer loop: controls sorting passes):
-    a. Initialize a flag `swapped = False` (tracks if any swaps happen in this pass).
-    b. Iterate i from 0 to N-k-1 (inner loop: compares adjacent elements, skips sorted tail):
-	    If list[i] > list[i+1] (out of order):
-			- Use a temp variable `t` to swap: set `t = list[i+1]`, then `list[i+1] = list[i]`, finally `list[i] = t`.
-    - Set `swapped = True` (mark that a swap occurred).  
-    c. (Optional Early Exit) If `swapped` remains `False` after the inner loop: break all loops (list is fully sorted).
+1. Let N = length of the input list (number of elements to sort).    
+2. For k from 1 to N-1 (outer loop: controls sorting passes):    
+    a. Initialize a flag `swapped = False` (tracks if any swaps happen in this pass).  
+    b. Iterate i from 0 to N-k-1 (inner loop: compares adjacent elements, skips sorted tail):  
+	    If list[i] > list[i+1] (out of order):  
+			- Use a temp variable `t` to swap: set `t = list[i+1]`,    then `list[i+1] = list[i]`, finally `list[i] = t`.   
+    - Set `swapped = True` (mark that a swap occurred).     
+    c. (Optional Early Exit) If `swapped` remains `False` after the inner loop: break all loops (list is fully sorted).    
     
 ## 课程1心得感悟
 课程安排非常好，reading的部分比较基础但是同样有一定的广度拓展，video的部分会举一些进阶的例子，同时验证了reading里随笔一提拓展知识，而不是单纯的重复强调。这种内容安排会一直源源不断地给我刺激，即使是第一课，主要就是概念和总体思路，但就是让人感觉学的停不下来。  
