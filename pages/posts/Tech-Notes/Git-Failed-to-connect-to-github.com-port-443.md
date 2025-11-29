@@ -1,5 +1,5 @@
 ---
-title: Git网络代理配置—Git连不上GitHub的443端口 (failed to connect to github.com 433)
+title: Git网络代理配置—Git连不上GitHub的443端口
 date: 2025-11-29
 updated: 2025-11-29
 categories: 技术笔记
