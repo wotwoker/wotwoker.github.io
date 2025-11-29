@@ -29,7 +29,7 @@ git config --global --get https.proxy
 如果没有输出，则没有给git配置过代理。    
 
 **step2**: 查看当前代理软件的代理地址、端口和代理方式，例如clash verge：     
-![代理地址端口](pic/Pasted%20image%2020251129160220.png)
+![代理地址端口](./pic/Pasted%20image%2020251129160220.png)
 
 **step3**: 上图可看出使用的混合代理，给 Git 配置时一般推荐先用 **HTTP 写法**，兼容性最好：
 ```bash
@@ -92,8 +92,8 @@ git config --global http.proxy  http://127.0.0.1:7897
 git config --global https.proxy http://127.0.0.1:7897
 ```
 意思是：   
-访问 http://xxx 仓库 → 用 127.0.0.1:7897 这个 HTTP 代理
-访问 https://xxx 仓库 → 也用 127.0.0.1:7897 这个 HTTP 代理
+访问 `http://xxx` 仓库 → 用 127.0.0.1:7897 这个 HTTP 代理     
+访问 `https://xxx` 仓库 → 也用 127.0.0.1:7897 这个 HTTP 代理     
 
 **大多数国内用的代理软件（包括 Clash）对外暴露的是“HTTP 代理”或者“Mixed 端口”**
 - 它听的是一个 **明文 HTTP 协议**（带 CONNECT 方法）的端口；

@@ -93,44 +93,58 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/posts/Life-Essays/Am_I_into_light_yuri': RouteRecordInfo<
-      '/posts/Life-Essays/Am_I_into_light_yuri',
-      '/posts/Life-Essays/Am_I_into_light_yuri',
+    '/posts/Life-Essays/Am-I-into-light-yuri': RouteRecordInfo<
+      '/posts/Life-Essays/Am-I-into-light-yuri',
+      '/posts/Life-Essays/Am-I-into-light-yuri',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/posts/Life-Essays/I_really_love_RADWIMPS——happy_20th_anniversary!': RouteRecordInfo<
-      '/posts/Life-Essays/I_really_love_RADWIMPS——happy_20th_anniversary!',
-      '/posts/Life-Essays/I_really_love_RADWIMPS——happy_20th_anniversary!',
+    '/posts/Life-Essays/I-really-love-RADWIMPS——happy-20th-anniversary!': RouteRecordInfo<
+      '/posts/Life-Essays/I-really-love-RADWIMPS——happy-20th-anniversary!',
+      '/posts/Life-Essays/I-really-love-RADWIMPS——happy-20th-anniversary!',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/posts/TechNotes/github_pages+Quartz+Obsidian_to_bulid_your_Blog': RouteRecordInfo<
-      '/posts/TechNotes/github_pages+Quartz+Obsidian_to_bulid_your_Blog',
-      '/posts/TechNotes/github_pages+Quartz+Obsidian_to_bulid_your_Blog',
+    '/posts/Tech-Notes/Git-Failed-to-connect-to-github.com-port-443': RouteRecordInfo<
+      '/posts/Tech-Notes/Git-Failed-to-connect-to-github.com-port-443',
+      '/posts/Tech-Notes/Git-Failed-to-connect-to-github/com-port-443',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/posts/TechNotes/Hello_Valaxy': RouteRecordInfo<
-      '/posts/TechNotes/Hello_Valaxy',
-      '/posts/TechNotes/Hello_Valaxy',
+    '/posts/Tech-Notes/Git-Version-Control-Study-Notes': RouteRecordInfo<
+      '/posts/Tech-Notes/Git-Version-Control-Study-Notes',
+      '/posts/Tech-Notes/Git-Version-Control-Study-Notes',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/posts/TechNotes/Introductory_C_Programming_Specialization_Course1': RouteRecordInfo<
-      '/posts/TechNotes/Introductory_C_Programming_Specialization_Course1',
-      '/posts/TechNotes/Introductory_C_Programming_Specialization_Course1',
+    '/posts/Tech-Notes/githubpages-Quartz-Obsidian-to-bulid-your-Blog': RouteRecordInfo<
+      '/posts/Tech-Notes/githubpages-Quartz-Obsidian-to-bulid-your-Blog',
+      '/posts/Tech-Notes/githubpages-Quartz-Obsidian-to-bulid-your-Blog',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/posts/TechNotes/Introductory_C_Programming_Specialization_Course2': RouteRecordInfo<
-      '/posts/TechNotes/Introductory_C_Programming_Specialization_Course2',
-      '/posts/TechNotes/Introductory_C_Programming_Specialization_Course2',
+    '/posts/Tech-Notes/Hello-Valaxy': RouteRecordInfo<
+      '/posts/Tech-Notes/Hello-Valaxy',
+      '/posts/Tech-Notes/Hello-Valaxy',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course1': RouteRecordInfo<
+      '/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course1',
+      '/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course1',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course2': RouteRecordInfo<
+      '/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course2',
+      '/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course2',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -215,39 +229,51 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'pages/posts/Life-Essays/Am_I_into_light_yuri.md': {
+    'pages/posts/Life-Essays/Am-I-into-light-yuri.md': {
       routes:
-        | '/posts/Life-Essays/Am_I_into_light_yuri'
+        | '/posts/Life-Essays/Am-I-into-light-yuri'
       views:
         | never
     }
-    'pages/posts/Life-Essays/I_really_love_RADWIMPS——happy_20th_anniversary!.md': {
+    'pages/posts/Life-Essays/I-really-love-RADWIMPS——happy-20th-anniversary!.md': {
       routes:
-        | '/posts/Life-Essays/I_really_love_RADWIMPS——happy_20th_anniversary!'
+        | '/posts/Life-Essays/I-really-love-RADWIMPS——happy-20th-anniversary!'
       views:
         | never
     }
-    'pages/posts/TechNotes/github_pages+Quartz+Obsidian_to_bulid_your_Blog.md': {
+    'pages/posts/Tech-Notes/Git-Failed-to-connect-to-github.com-port-443.md': {
       routes:
-        | '/posts/TechNotes/github_pages+Quartz+Obsidian_to_bulid_your_Blog'
+        | '/posts/Tech-Notes/Git-Failed-to-connect-to-github.com-port-443'
       views:
         | never
     }
-    'pages/posts/TechNotes/Hello_Valaxy.md': {
+    'pages/posts/Tech-Notes/Git-Version-Control-Study-Notes.md': {
       routes:
-        | '/posts/TechNotes/Hello_Valaxy'
+        | '/posts/Tech-Notes/Git-Version-Control-Study-Notes'
       views:
         | never
     }
-    'pages/posts/TechNotes/Introductory_C_Programming_Specialization_Course1.md': {
+    'pages/posts/Tech-Notes/githubpages-Quartz-Obsidian-to-bulid-your-Blog.md': {
       routes:
-        | '/posts/TechNotes/Introductory_C_Programming_Specialization_Course1'
+        | '/posts/Tech-Notes/githubpages-Quartz-Obsidian-to-bulid-your-Blog'
       views:
         | never
     }
-    'pages/posts/TechNotes/Introductory_C_Programming_Specialization_Course2.md': {
+    'pages/posts/Tech-Notes/Hello-Valaxy.md': {
       routes:
-        | '/posts/TechNotes/Introductory_C_Programming_Specialization_Course2'
+        | '/posts/Tech-Notes/Hello-Valaxy'
+      views:
+        | never
+    }
+    'pages/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course1.md': {
+      routes:
+        | '/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course1'
+      views:
+        | never
+    }
+    'pages/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course2.md': {
+      routes:
+        | '/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course2'
       views:
         | never
     }

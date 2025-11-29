@@ -1,7 +1,7 @@
 ---
 title: "Introductory C Programming Specialization 学习笔记——Course 2: Writing, Running, and Fixing Code in C"
 date: 2025-11-24
-updated: 2025-11-24
+updated: 2025-11-29
 categories: 课程笔记
 tags:
   - 课程
@@ -21,7 +21,7 @@ Write Down What You Just Did. (for example, that the price of bread , we will ha
 **Step 3: Generalizing Values, Repetitions, Conditional Behavior**     
 we need to generalize to all instances of the problem, think about _why_ you did what you did, recognize patterns, and figure out how to deal with any possible inputs.   
 
-![使用错误的算法得到错误的实例](pic/Pasted%20image%2020251124144405.png)
+![使用错误的算法得到错误的实例](./pic/Pasted%20image%2020251124144405.png)
 
 >To find the intersection of two rectangles, r1 and r2:  
 >Make a rectangle (called ans) with  
@@ -184,7 +184,7 @@ Once you have your code written, you need to compile it in order to be able to r
 Compiling a program is the act of translating the human-readable code that a programmer wrote (called “*source code*”) into a *machine-executable format*.   
 There are many different C compilers, but we will be using **gcc**, which stands for “GNU Compiler Collection.”    
 预处理(preprocessor) -> 编译(compiler) -> 汇编(assembler) -> 连接(linker)     
-![compiling process](pic/Pasted%20image%2020251125160626.png)
+![compiling process](./pic/Pasted%20image%2020251125160626.png)
 
 #### Preprocessor
 _include_ **directives**    
@@ -329,8 +329,8 @@ The final step of the process is to _link_ the program. Linking the program take
 
 ### Make
 legitimately slacking off（合法摸鱼）：     
-![my code's compiling](pic/Pasted%20image%2020251126152014.png)
-![编译链](pic/Pasted%20image%2020251126152703.png)
+![my code's compiling](./pic/Pasted%20image%2020251126152014.png)
+![编译链](./pic/Pasted%20image%2020251126152703.png)
 
 or use make!    
 - Tool for building large programs
@@ -518,7 +518,7 @@ three levels of test coverage: statement coverage, decision coverage, and path c
 - _Statement coverage_ means that every statement in the function is executed.
 - _decision coverage_—in which all possible outcomes of decisions are exercised
 - _path coverage_—test cases must span all possible valid paths through the control flow graph
-![decision coverage](pic/Pasted%20image%2020251128100937.png)
+![decision coverage](./pic/Pasted%20image%2020251128100937.png)
 So how do you pick the right level of test coverage? —“it depends”.
 
 **Generating test cases**    
@@ -552,7 +552,7 @@ there are performance critical situations where ever bit of speed matters. For t
 
 ### Step 7: Debugging
 Once you have found a problem in your code, you need to fix it—this process is called _debugging_.Debugging should be an application of the _scientific method_.    
-![scientific method for debugging](pic/Pasted%20image%2020251129094722.png)
+![scientific method for debugging](./pic/Pasted%20image%2020251129094722.png)
 
 **Gather Information, Apply Expert Knowledge**     
 - _insert print statements_ (in C, calls to _printf_) to display the values of various variables at various points in the program.(many disadvantages)
