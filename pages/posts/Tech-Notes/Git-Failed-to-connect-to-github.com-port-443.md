@@ -68,7 +68,7 @@ sequenceDiagram
 
     Note over Git, GitHub: 阶段 2：真正的 HTTPS 通信<br/>(这里体现为何是 https.proxy)
     
-    rect rgb(240, 248, 255)
+    rect rgb(102, 116, 142, 0.1)
         Note right of Git: 从这里开始，代理只负责<br/>盲目转发数据包，它解不开内容
         
         Git->>GitHub: TLS Client Hello (握手开始)
