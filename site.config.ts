@@ -34,7 +34,7 @@ export default defineSiteConfig({
     {
       name: 'Bangumi',
       link: 'https://bgm.tv/user/gen_river',
-      icon: 'i-simple-icons-bangumi',
+      icon: 'ri-tv-line',
       color: '#FF8EB3',
     },
     {
