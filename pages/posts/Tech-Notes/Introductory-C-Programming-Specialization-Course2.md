@@ -1,7 +1,7 @@
 ---
 title: "Introductory C Programming Specialization 学习笔记——Course 2: Writing, Running, and Fixing Code in C"
 date: 2025-11-24
-updated: 2025-11-29
+updated: 2025-12-01
 categories: 课程笔记
 tags:
   - 课程
@@ -486,10 +486,6 @@ anotherFile.o: anotherHeader.h someHeader.h
 oneFile.o: oneHeader.h someHeader.h
 ```
 
-### Run program in valgrind
-_valgrind_ is particularly good at finding errors in your program that did not manifest simply because you got lucky when you ran it.    
-We highly recommend running your program in _valgrind_ whenever you are **testing your program**.   
-
 ## Module 3: Testing and debugging
 - Testing: finding bugs
 - Debugging: fixing bugs
@@ -569,9 +565,431 @@ Once you have found a problem in your code, you need to fix it—this process is
 Similarly, when evaluating whether to modify the current code or throw it away and start fresh, you should not consider how much time you have already put into it, but rather how much time it will take to **fix the current code** versus **redesigning it from scratch**.       
 （比如我当时的毕设项目是继续调试修改我的tensorfolw代码，还是用pytorch重构）   
 
+#### Run program in valgrind
+_valgrind_ is particularly good at finding errors in your program that did not manifest simply because you got lucky when you ran it.    
+We highly recommend running your program in _valgrind_ whenever you are **testing your program**.   
 
 **finding problems with Valgrind**    
-
 ```bash
 valgrind ./yourprogram
+```
+
+#### gdb基本使用：   
+1. 编译准备 (Compilation)
+在使用 GDB 之前，必须在编译代码时加入**调试符号**。
+- 推荐参数： 使用 `-ggdb3` 标志（比标准的 `-g` 提供更多 GDB 专用的调试信息，如宏定义）。 
+- 注意： 如果分步编译（先生成对象文件再链接），**每一步**都必须包含 `-ggdb3`
+
+2. 启动 GDB (Running GDB)
+虽然可以在命令行直接运行，但文中推荐在 **Emacs** 中运行：
+- 启动命令： 在 Emacs 中输入 `M-x gdb` (即 `Alt-x` 或 `Esc-x` 后输入 `gdb`)。
+- 配置： 确认提示行中的程序名称正确。
+- 成功标志： 出现名为 `*gdb-progname*` 的缓冲区，并显示 `(gdb)` 提示符。
+- 常见错误：
+    - 提示 "no debugging symbols found"：说明编译时漏加了调试标志，需重新编译。
+    - 提示 "No such file or directory"：说明当前目录下找不到该程序。
+
+3. 核心调试命令 (Core Commands)
+当看到 `(gdb)` 提示符时，可以使用以下命令：
+**程序执行控制：**
+- `start`：开始（或重启）程序，并在进入 `main` 函数时**立即暂停**。
+- `run`：运行（或重启）程序，直到遇到断点或程序结束，**不会**自动在 main 处暂停。
+- `step` (简写 `s`)：单步执行。如果遇到函数调用，**会进入**该函数内部。
+- `next` (简写 `n`)：单步执行。如果遇到函数调用，**直接执行完**该函数（不进入内部），停在下一行。
+**数据查看：**
+- `print` (简写 `p`)：计算并打印表达式的值。
+    - 副作用： 表达式中的操作（如 `p x=3`）会实际修改程序状态。
+    - 格式化： `p/x` 以十六进制显示。
+    - 历史记录： GDB 会将打印过的值保存在 `$1`, `$2` 等变量中供后续使用。
+    - 数组查看： `p 数组名[起始索引]@数量`（例如 `p a[0]@5` 查看数组 a 的前 5 个元素）。
+- `display` (简写 `disp`)：设置自动显示。每次程序暂停（显示提示符）时，都会自动打印该表达式的值（例如 `display i`）。
+
+ 4. 实用技巧
+- 重复命令：直接按 `Enter` 键，会重复执行上一次输入的命令（常用于连续执行 `step` 或 `next`）。
+- 传递参数：
+    - 方法1：`run arg1 arg2`
+    - 方法2：`set args arg1 arg2`
+
+#### GDB检查程序运行状态
+1. 查看调用栈 (Stack Inspection)
+- 命令： `backtrace`
+- 功能： 列出当前的函数调用栈帧。
+    - 顶部是当前正在执行的帧。
+    - 底部是 `main` 函数。
+    - 会显示每个函数调用的代码行号。
+2. 切换栈帧 (Navigating Frames)
+- 背景： `print` 命令只能查看当前作用域内的变量。如果想查看调用者（上一层函数）中的变量，需要切换帧。
+- 命令： `up` 和 `down`
+    - 用于在调用栈中上下移动，改变当前的查看上下文。
+- 典型应用场景： 断言失败 (Failed Assert)。
+    - 当程序因 `assert` 失败停止时，GDB 通常会停在 C 标准库的深处。
+    - 使用 `up` 命令可以将视角移回你自己的代码中，以便查看导致断言失败的具体位置和上下文。
+3. 获取通用信息 (Info Command)
+- 命令： `info` (配合子命令使用)
+- 功能： 查看程序的各种元数据和状态。
+    - `info frame`：描述当前栈帧的内存布局。    
+    - `info types`：描述程序中定义的数据类型。
+    - `help info`：查看更多可用的 info 子命令。
+
+#### breakpoint控制程序执行
+1. 设置断点 (Breakpoints)
+断点能让程序在执行到特定位置时暂停，以便进行检查。
+- 设置命令： `break` 后跟**行号**或**函数名**（例如：`break main`）。
+- Emacs 快捷键： `C-x space` 可在当前光标处设置断点。
+- ID 编号： 每个断点都会被分配一个唯一的数字 ID，用于后续操作。
+- 继续执行： 设置断点后，使用 `run` 或 `continue` 让程序运行直到遇到断点。
+
+2. 条件断点 (Conditional Breakpoints)
+为了避免在循环（如执行 100 万次）中频繁暂停，可以设置条件断点，仅当满足特定条件（C 语言表达式）时才暂停。
+- 创建时设置： `break [位置] if [条件]`
+    - _示例：_ `break 7 if i==250000`
+- 修改已有断点： `cond [断点ID] [条件]`
+    - _示例：_ `cond 1 i==250000`
+- 取消条件： `cond [断点ID]`（不带表达式）会将断点变回无条件断点。
+
+ 3. 管理断点
+- 查看状态： `info breakpoints` (简写 `i b`)，列出所有断点及其 ID。 
+- 启用/禁用： `enable [ID]` 或 `disable [ID]`。禁用的断点依然存在但不会触发暂停。
+- 删除： `delete [ID]`。
+
+ 4. 其他流程控制命令
+- **`until`**：执行直到**跳出当前循环**（停在循环后的第一行）。适用于不想一步步走完长循环的情况。
+- `finish` (简写 `fin`)：执行直到**当前函数返回**。适用于想快速结束当前函数调用并返回到调用者的情况。
+
+#### watchpoint
+1. 基本用法
+- 功能：让 GDB 在**表达式的值发生变化**时暂停程序。
+- 命令： `watch [表达式]` (例如 `watch i`)。
+- 效果：当程序暂停时，GDB 会打印出该表达式的**旧值 (Old value)** 和 **新值 (New value)**。
+
+2. 解决作用域问题 (Scope Issues)
+- **问题：** 想通过指针（如 `*p`）监控一块内存，但指针变量 `p` 本身是局部的，当它超出作用域（函数返回）后，GDB 就无法通过变量名 `p` 继续监控那块内存了。
+- **解决方案：** 利用 GDB 的历史变量。
+    1. 先执行 `print p`：GDB 会显示地址并将其保存到一个内部变量中（例如显示 `$6 = 0x123456...`）。
+    2. 再执行 `watch *$6`：使用这个内部变量（`$6`）来设置观察点。
+- **原理：** GDB 的内部变量（`$N`）在 GDB 重启前一直有效，不会受程序代码作用域的影响，从而实现对特定内存地址的持续监控。
+
+#### gdb对Signals的处理
+Whenever your program receives a signal, _gdb_ will stop the program and give you control. There are three particularly common signals that come up during debugging
+
+1. **SIGSEGV** (Segmentation Fault - 段错误)
+	- 触发原因：非法内存访问（如访问空指针、数组越界）。
+	- 调试优势：GDB 会让程序**精确地停在导致崩溃的那一行代码上**。
+	- 操作：此时可以直接打印相关变量，检查为何会出现非法访问。
+
+2. **SIGABRT** (Abort - 异常终止)
+	- 触发原因：程序调用了 `abort()` 或 **`assert`（断言）失败**。 
+	- 调试优势：当断言失败时，程序会暂停。
+	- 操作： 此时程序通常停在 C 库函数内部，你需要（结合之前学到的）`up` 命令向上回溯几层栈帧，回到自己的代码中查看导致断言失败的上下文。
+
+3. **SIGINT** (Interrupt - 中断)
+- 触发原因：用户手动中断程序。
+    - 命令行：按 `Ctrl-c`。 
+    - Emacs 中：按 `C-c C-c` (两次 Ctrl-c)。
+- 调试用途：专门用于调试**死循环** (Infinite Loop)或程序卡死。
+- 操作：
+    1. 在 GDB 中运行程序，等待程序进入卡死状态。
+    2. 发送中断信号（`C-c C-c`）。
+    3. 查看程序当前停在哪一行，分析为何逻辑会卡在这里。
+
+
+
+## Module 4: Project (Texas Hold'em）
+
+### 了解下**指针**：
+```c
+// 1.定义 (Create) 
+int *ptr; 
+// 意思是：我申请一张纸条，名字叫 ptr。 
+// 这里的 * 只是告诉编译器：“ptr 是个指针类型”，仅此而已。 
+// 2.赋值 (Assign) 
+ptr = &num; 
+// 意思是：把 num 的地址写在 ptr 这张纸条上。 
+// 注意：这里没有 * 号！我们是直接修改 ptr 本身。
+
+//合写1和2：
+int *ptr = &num; // 这里的 * 只是声明 ptr 的身份。
+
+*ptr = 20; // 这里的 * 是动作：去那个地址，把里面的值改成 20。
+
+
+const char * str; 
+// 倒着读：str is a pointer (*) to a char that is const.
+// 意思：指针可以变，字符不能变。
+
+char * const str = "hello"; 
+// 倒着读：str is a const pointer (*) to a char. 
+// 意思：指针本身被锁死了（不能指别处），但字符可以变。
+
+const char * const str = "hello"; 
+// 指针不能变，字符也不能变。
+
+printf("%s\n", str); //打印指向的字符串
+printf("%p\n", str); //打印指针地址
+```
+
+
+### 游戏规则（德州扑克）
+
+- 每位玩家有 2 张**底牌**（Pocket cards，只有自己能看）。
+- 桌面上会分三轮发出 5 张**公共牌**（Common cards，大家共有）。
+- **Flop（翻牌）**：前 3 张公共牌。
+- **Turn（转牌）**：第 4 张公共牌。
+- **River（河牌）**：第 5 张公共牌。
+- 玩家从这 7 张牌中凑出最大的 5 张牌组合比大小。
+
+- **牌局实况**：
+    - 现状：Genevieve 凑成了“顺子”（Straight，五张连续的牌），Drew 凑成了“三条 K
+    - 悬念：只剩最后一张牌（河牌/River）没发出来。Drew 想要赢，必须拿到特定的牌凑成“葫芦”或“四条”。
+    - 概率：解说员提到 Drew 的胜率只有 21%。
+
+### 项目任务
+编写 `cards.c` 文件，实现 `cards.h` 中声明的一系列函数。这些函数主要负责：
+- **验证**：检查一张牌的数据是否合法。
+- **转换**：在“人类可读的字符”和“计算机存储的结构体”之间转换。
+- **打印**：把牌显示在屏幕上。
+- **映射**：把 0-51 的数字映射成具体的牌
+
+### 测试与运行
+#### 阶段一：自己测试 (Unit Testing)
+1. 在 `my-test-main.c` 中编写代码，调用`cards.c`写的上述函数，打印结果，看看是否符合预期。
+2. 在终端输入 `make` 或 `make test`。
+3. 这将编译你的 `cards.c` 和 `my-test-main.c`，并生成可执行文件。
+
+#### 阶段二：运行完整模拟 (Integration)
+当确信函数都没问题了：
+1. 在终端输入 `make poker`。
+2. 这将把你的 `cards.c` 和课程提供的预编译文件（`.o`）链接在一起。
+3. 运行生成的程序，并提供一个输入文件。
+4. 扑克模拟的输入格式 (关于 Input File)
+
+当你运行最终的 `poker` 程序时，它需要读取文件来设定牌局。格式如下：
+- **例子**：`As Ah Kc Qd 6c ?0 ?1`
+- **含义**：
+    - `As Ah`：玩家手里的牌（黑桃A，红桃A）。
+    - `Kc Qd 6c`：桌面上已知的公共牌（翻牌）。
+    - `?0 ?1`：**未知牌的占位符**。程序会用蒙特卡洛模拟来随机填充这几张牌，计算胜率。
+    - 如果是多行，代表多个玩家在对局。
+
+### 项目代码
+
+#### cards.h
+
+```C card.h
+#ifndef CARD_H
+#define CARD_H
+#define VALUE_ACE 14
+#define VALUE_KING 13
+#define VALUE_QUEEN 12
+#define VALUE_JACK 11
+
+typedef enum {
+  SPADES,
+  HEARTS,
+  DIAMONDS,
+  CLUBS,
+  NUM_SUITS
+} suit_t;
+
+struct card_tag {
+  unsigned value;
+  suit_t suit;
+};
+typedef struct card_tag card_t;
+
+typedef enum {
+  STRAIGHT_FLUSH, //同花顺（最强牌型，如 10-J-Q-K-A 同花色）
+  FOUR_OF_A_KIND, //四条（四张同点数牌，如四张 5）
+  FULL_HOUSE, //葫芦（三张同点 + 一对，如三张 3 + 一对 7）
+  FLUSH, //同花（五张同花色但不成顺子）
+  STRAIGHT, //顺子（五张点数连续但不同花色）
+  THREE_OF_A_KIND, //三条（三张同点数牌）
+  TWO_PAIR, //两对（两组不同的对子，如一对 2 + 一对 9）
+  PAIR, //一对（仅一组对子）
+  NOTHING //无牌型（最弱，五张牌无上述任何组合）
+} hand_ranking_t;
+
+//some function prototypes.
+card_t card_from_num(unsigned c);
+void assert_card_valid(card_t c);
+const char * ranking_to_string(hand_ranking_t r) ;
+char value_letter(card_t c);
+char suit_letter(card_t c) ;
+void print_card(card_t c);
+ard_t card_from_letters(char value_let, char suit_let);
+#endif
+```
+
+#### makefile
+```makefile
+CFLAGS=-ggdb3 -Wall -Werror -pedantic -std=gnu99
+GIVEN_OBJS=deck.o  eval.o  future.o  input.o  main.o eval-c4.o deck-c4.o
+
+test: cards.o my-test-main.o
+    gcc -o test -ggdb3 cards.o my-test-main.o
+poker: $(GIVEN_OBJS) cards.o
+    gcc -o poker -ggdb3  cards.o $(GIVEN_OBJS)
+clean:
+    rm test poker cards.o my-test-main.o *~
+```
+
+#### cards.c
+
+```c card.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+#include "cards.h"
+
+/* * 检查牌是否合法
+ * 依据 cards.h: value 范围是 2 到 VALUE_ACE(14), suit 范围是 SPADES 到 CLUBS
+ */
+void assert_card_valid(card_t c) {
+    assert(c.value >= 2 && c.value <= VALUE_ACE);
+    assert(c.suit >= SPADES && c.suit <= CLUBS);
+}
+
+/* * 将牌型枚举转换为字符串
+ * 枚举名与 cards.h 完全对应
+ */
+const char * ranking_to_string(hand_ranking_t r) {
+    switch(r) {
+        case STRAIGHT_FLUSH:  return "STRAIGHT_FLUSH";
+        case FOUR_OF_A_KIND:  return "FOUR_OF_A_KIND";
+        case FULL_HOUSE:      return "FULL_HOUSE";
+        case FLUSH:           return "FLUSH";
+        case STRAIGHT:        return "STRAIGHT";
+        case THREE_OF_A_KIND: return "THREE_OF_A_KIND";
+        case TWO_PAIR:        return "TWO_PAIR";
+        case PAIR:            return "PAIR";
+        case NOTHING:         return "NOTHING";
+        default:              return "UNKNOWN";
+    }
+}
+
+  
+/* * 获取牌面点数的字符表示
+ * 10 映射为 '0', A, K, Q, J 映射为对应首字母
+ */
+char value_letter(card_t c) {
+    if (c.value >= 2 && c.value <= 9) {
+        return '0' + c.value; // 字符就是数字，对数字value进行ASCII码偏移，得到字符
+    }
+    switch (c.value) {
+        case 10:          return '0';
+        case VALUE_JACK:  return 'J';
+        case VALUE_QUEEN: return 'Q';
+        case VALUE_KING:  return 'K';
+        case VALUE_ACE:   return 'A';
+        default:          return '?';
+    }
+}
+  
+
+/* * 获取花色的字符表示
+ */
+char suit_letter(card_t c) {
+    switch (c.suit) {
+        case SPADES:   return 's';
+        case HEARTS:   return 'h';
+        case DIAMONDS: return 'd';
+        case CLUBS:    return 'c';
+        default:       return '?';
+    }
+}
+ 
+
+/* * 打印牌面，无换行
+ */
+void print_card(card_t c) {
+    printf("%c%c", value_letter(c), suit_letter(c));
+}
+  
+
+/* * 从字符构建牌结构体
+ */
+card_t card_from_letters(char value_let, char suit_let) {
+    card_t temp;
+    // 解析点数
+    if (value_let >= '2' && value_let <= '9') {
+        temp.value = value_let - '0';
+    } else {
+        switch(value_let) {
+            case '0': temp.value = 10; break;
+            case 'J': temp.value = VALUE_JACK; break;
+            case 'Q': temp.value = VALUE_QUEEN; break;
+            case 'K': temp.value = VALUE_KING; break;
+            case 'A': temp.value = VALUE_ACE; break;
+            default:
+                // 遇到非法字符，报错并退出
+                fprintf(stderr, "Error: Invalid value letter '%c'\n", value_let);
+                exit(EXIT_FAILURE);
+        }
+    }
+  
+    // 解析花色
+    switch(suit_let) {
+        case 's': temp.suit = SPADES; break;
+        case 'h': temp.suit = HEARTS; break;
+        case 'd': temp.suit = DIAMONDS; break;
+        case 'c': temp.suit = CLUBS; break;
+        default:
+            // 遇到非法花色，报错并退出
+            fprintf(stderr, "Error: Invalid suit letter '%c'\n", suit_let);
+            exit(EXIT_FAILURE);
+    }
+
+    assert_card_valid(temp);
+    return temp;
+}
+
+  
+/* * 将数字 0-51 映射为唯一的牌
+ */
+card_t card_from_num(unsigned c) {
+    card_t temp;
+    // 使用强制类型转换 (suit_t) 消除潜在的编译器警告
+    temp.suit = (suit_t)(c / 13);
+    temp.value = (c % 13) + 2; //牌点数是从2开始的
+  
+    // 虽然输入通常是安全的，但在返回前检查一下总是好的
+    assert_card_valid(temp);
+    return temp;
+}
+```
+
+#### 测试文件my-test-main.c
+```c my-test-main.c
+#include <stdio.h>
+#include "cards.h"
+  
+int main(void) {
+    print_card(card_from_num(15));
+    hand_ranking_t r = FULL_HOUSE;
+    printf("%s\n", ranking_to_string(r));
+    printf("%p\n", ranking_to_string(r));
+    char value_let = '5';
+    char suit_let = 'd';
+    print_card(card_from_letters(value_let, suit_let));
+    return 0;
+}
+```
+
+#### 输入与输出
+
+input.txt    
+```txt
+As Ah Kc Qd 6c ?0 ?1
+2c 3d Kc Qd 6c ?0 ?1
+Ks Qs Kc Qd 6c ?0 ?1
+```
+
+输出：
+```bash
+$ ./poker input.txt
+
+Hand 0 won 2615 / 10000 times (26.15%)
+Hand 1 won 631 / 10000 times (6.31%)
+Hand 2 won 6754 / 10000 times (67.54%)
+And there were 0 ties
 ```
