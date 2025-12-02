@@ -7,6 +7,7 @@ tags:
   - 课程
   - 笔记
 ---
+>**课程网站**：[https://www.coursera.org/specializations/c-programming](https://www.coursera.org/specializations/c-programming)
 
 ## Module 1: Introduction
 - Programming: Plan First, Then Code  
@@ -332,3 +333,5 @@ int main(void) {
 上次学C还是大一的时候，大都忘了，这次用英文材料学，对基本概念的理解更加通透一点了，尤其是字符类型、结构体、typedef，第一次学的时候理解有挺多障碍，现在好多了。
 
 Course 1 was completed in six days.
+
+[跳转->课程2学习笔记](./Introductory-C-Programming-Specialization-Course2.md)

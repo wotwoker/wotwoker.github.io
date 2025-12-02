@@ -1,7 +1,7 @@
 ---
 title: "Introductory C Programming Specialization 学习笔记——Course 2: Writing, Running, and Fixing Code in C"
 date: 2025-11-24
-updated: 2025-12-01
+updated: 2025-12-02
 categories: 课程笔记
 tags:
   - 课程
@@ -993,3 +993,12 @@ Hand 1 won 631 / 10000 times (6.31%)
 Hand 2 won 6754 / 10000 times (67.54%)
 And there were 0 ties
 ```
+
+
+## 课程2心得感悟
+
+Course2的内容比Course1要丰富许多，这次见到的基本都是之前没有学过的新知识，主要包括7步编程法的后3步（算法翻译成代码、测试代码、debug调试代码）。新的知识有编译compilling、make和makefile，这些都是之前懵懵懂懂的概念，实操后思路就清晰多了。然后还了解了一些测试代码的思想，虽然测试是一个苦活，但是在整个项目开发中也算是非常重要的一环了。最后是关于调试代码的思路，调试我还是比较熟悉的，毕竟用python和matlab也调试过不少代码。
+
+除了这些有用的编程、测试、调试思想，还学习了许多使用工具。比如emacs编辑器，git，valgrind、gdb，虽然还是入门阶段，上手实操过后基本使用不成问题。但是对一套目前工业界开发项目的标准工具使用流程方法，还是不太明白，感觉目前掌握的工具使用还是比较low。
+
+总结下也是一个星期的学习，收获确实很大。
