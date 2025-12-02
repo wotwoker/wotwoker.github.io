@@ -6,6 +6,7 @@ categories: 课程笔记
 tags:
   - 课程
   - 笔记
+  - C
 ---
 
 ## Module 1: Writing Code

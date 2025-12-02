@@ -6,6 +6,7 @@ categories: 技术笔记
 tags:
   - Quartz
   - 笔记
+  - 博客搭建
 ---
 ## 准备工作
 1. 安装 Node.js，同时安装npm，自行搜索最新的安装以及配置教程。

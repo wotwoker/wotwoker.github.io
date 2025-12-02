@@ -6,6 +6,7 @@ categories: 课程笔记
 tags:
   - 课程
   - 笔记
+  - C
 ---
 >**课程网站**：[https://www.coursera.org/specializations/c-programming](https://www.coursera.org/specializations/c-programming)
 

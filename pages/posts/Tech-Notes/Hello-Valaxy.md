@@ -6,6 +6,7 @@ categories: 技术笔记
 tags:
   - valaxy
   - 笔记
+  - 博客搭建
 ---
 
 >官方教程：[开始 - VALAXY](https://valaxy.site/guide/getting-started)  
