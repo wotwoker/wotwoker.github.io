@@ -17,7 +17,7 @@ export default defineSiteConfig({
       name: 'GitHub',
       link: 'https://github.com/wotwoker',
       icon: 'i-ri-github-line',
-      color: '#6e5494',
+      color: '#131117ff',
     },
     {
       name: '哔哩哔哩',
@@ -34,14 +34,14 @@ export default defineSiteConfig({
     {
       name: 'Bangumi',
       link: 'https://bgm.tv/user/gen_river',
-      icon: 'i-pixelarticons-device-tv',
-      color: '#FF8EB3',
-    },
+      icon: 'i-ri-tv-line',
+      color: '#f26cac',
+    }, 
     {
       name: 'E-Mail',
       link: 'xean2020@outlook.com',
       icon: 'i-ri-mail-line',
-      color: '#8E71C1',
+      color: '#1388cdff',
     },
     {
       name: 'Travelling',
