@@ -219,7 +219,7 @@ gcc -o squares -Wall -Werror -std=gnu99 --pedantic squares.c squares_test.o
 - `--std=gnu99` gnu99 will match what describes in this course, and is generally a reasonable standard to program in.
 - `-Wall` requests that the compiler issue _warnings_ for a wide range of questionable behavior，however, unlike errors, the compiler will continue and produce a program even if it warned
 - `-Werror` tells the compiler to treat all warnings as errors—making it refuse to compile the program
-- 
+- `-o` 必须紧跟输出文件名
 
 **man Pages** (manual 缩写)是 UNIX 系统中提供内置帮助的核心命令    
 ```bash
@@ -343,14 +343,13 @@ Makefile specifies
 
 The make command reads a file called Makefile (though you can ask it to read an input file by a different name) which specifies how to compile your program. Specifically, it names the _targets_ which can be made, their _dependencies_, and the _rules_ to make the target.   
 
-```Makefile
+```Makefile 
 myProgram: oneFile.o anotherFile.o
     gcc -o myProgram oneFile.o anotherFile.o
 oneFile.o: oneFile.c oneHeader.h someHeader.h
     gcc -std=gnu99 -pedantic -Wall -c oneFile.c
 anotherFile.o: anotherFile.c anotherHeader.h someHeader.h
     gcc -std=gnu99 -pedantic -Wall -c anotherFile.c
-    
 ```
 这个Makefile有三个目标：myProgram，oneFile，anotherFile。输入`make`运行后，默认先编译第一个（myProgram),它依赖于两个 .o 文件，然后会分别检查有没有`oneFile.o`和`anotherFile.o`，以及它们是不是最新的，也就是如果`oneFile.c`比`oneFile.o`新，那么就会重新编译`oneFile.o`,`anotherFile.o`同理。确保有`oneFile.o`和`anotherFile.o`才会开始编译myProgram,如果myProgram比它这两个依赖文件更新，那就不会编译（已经是ok的）
 
@@ -360,7 +359,8 @@ Makefile 中一个常见的目标是 clean 目标。它实际上并不会创建�
 clean:
     rm -f myProgram *.o *.c~ *.h~
 ```
-This target gets used to either force the entire program to be rebuilt (e.g., after you change various compilation flags in the Makefile), or if you just need to **clean up the directory, leaving only the source files** (e.g., if you are going to zip or tar up the source files to distribute them to someone).   
+This target gets used to either force the entire program to be rebuilt (e.g., after you change various compilation flags in the Makefile), or if you just need to **clean up the directory, leaving only the source files** (e.g., if you are going to zip or tar up the source files to distribute them to someone).    
+**伪目标声明规则**：`.PHONY: all clean` 只是告诉 Make：“`all` 和 `clean` 是伪目标，不用检查当前目录是否有同名文件，也不用判断它们是否‘过时’，只要执行 `make 目标名`，就直接运行对应的命令”。
 
 #### Generic rules 通用规则    
 
@@ -721,6 +721,7 @@ const char * str;
 char * const str = "hello"; 
 // 倒着读：str is a const pointer (*) to a char. 
 // 意思：指针本身被锁死了（不能指别处），但字符可以变。
+//字符串字面量`"hello"`在 C 语言中本质就是它首字符的地址——所以看似 “直接传字符串”，实际传入的正是地址，但这里编译器会默认在只读数据段存储这段字符。
 
 const char * const str = "hello"; 
 // 指针不能变，字符也不能变。

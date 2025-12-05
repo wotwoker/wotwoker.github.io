@@ -149,6 +149,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course3': RouteRecordInfo<
+      '/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course3',
+      '/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course3',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/tags/': RouteRecordInfo<
       '/tags/',
       '/tags',
@@ -274,6 +281,12 @@ declare module 'vue-router/auto-routes' {
     'pages/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course2.md': {
       routes:
         | '/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course2'
+      views:
+        | never
+    }
+    'pages/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course3.md': {
+      routes:
+        | '/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course3'
       views:
         | never
     }
