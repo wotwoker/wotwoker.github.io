@@ -291,3 +291,37 @@ int findLargestIndex(int * array, int n){
 **find closest point using array:**
 ![Closest Point Step-Through](./pic/Pasted%20image%2020251205120002.png)
 
+
+**Dangling Pointers**    
+Whenever you have a pointer to something whose memory has been deallocated, it is called a _dangling pointer_. Dereferencing a dangling pointer results in undefined behavior (and thus represents a serious problem with your code) because you have no idea what values are at the end of the arrow.
+![Dangling pointers](./pic/Pasted%20image%2020251206104902.png)
+
+**Array size**    
+>In C, the number of bits we would need varies from one platform to another—on a 32-bit platform (meaning memory addresses are 32 bits), we would want a 32-bit unsigned int; on a 64-bit platform we would want a 64 bit unsigned int.
+
+“unsigned integers that describe the size of things”—`size_t`. Whenever you see **size_t**, you should think “unsigned int with the right number of bits to describe the size or index of an array.”
+
+```c
+point * closestPoint (point * s, size_t n, point p) {
+  if (n == 0) {
+    return NULL;
+  }
+  double bestDistance = computeDistance(s[0],p);
+  point * bestChoice = &s[0];
+  for (size_t i = 1; i < n ; i++) {
+    double currentDistance = computeDistance(s[i],p);
+    if (currentDistance < bestDistance) {
+      bestChoice = &s[i];
+      bestDistance = currentDistance;
+    }
+  }
+  return bestChoice;
+}
+```
+
+calculate the size of a type for you with the **sizeof** operator    
+The **sizeof** operator takes one operand, which can either be a type name (_e.g._, `sizeof(double)`) or an expression (_e.g._, `sizeof(*p)`)
+
+
+## Module 3: Uses of Pointers
+
