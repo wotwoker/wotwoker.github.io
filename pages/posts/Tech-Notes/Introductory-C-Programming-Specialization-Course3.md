@@ -380,7 +380,7 @@ int stringEqual(const char * strl, const char * str2) {
 This task is common enough that there is already a function to do it—called `strcmp`—in _string.h_ of the C library.——it returns 0 if the strings are equal, and non-zero if they are different.
 
 **String Copying**    
-![String Copying](pic/Pasted%20image%2020251209114721.png)
+![String Copying](./pic/Pasted%20image%2020251209114721.png)
 We may, however, want to actually copy the contents of the string from one location to another. As with comparing for equality, doing this copy yourself requires **iterating** through the characters of the string and copying them one by one to the destination. In doing so, we must be careful that the destination has sufficient space to receive the string being copied into it.   
 
 The C library has a function, `strncpy` which performs this task for us—it copies a string from one location to another, and takes a parameter (_n_) telling it the maximum number of characters it is allowed to copy.
