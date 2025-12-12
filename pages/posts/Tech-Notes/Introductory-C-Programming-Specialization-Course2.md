@@ -8,6 +8,8 @@ tags:
   - 笔记
   - C
 ---
+>mindmap:
+>![课程3思维导图](./pic/mindmap2.svg)
 
 ## Module 1: Writing Code
 

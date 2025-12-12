@@ -10,6 +10,10 @@ tags:
 ---
 >**课程网站**：[https://www.coursera.org/specializations/c-programming](https://www.coursera.org/specializations/c-programming)
 
+>mindmap
+>![课程1思维导图](./pic/mindmap1.svg)
+
+
 ## Module 1: Introduction
 - Programming: Plan First, Then Code  
 - ![high-level overview of the programming process](https://s2.loli.net/2025/11/17/1uVUWzbE9GOS7Pp.png)
