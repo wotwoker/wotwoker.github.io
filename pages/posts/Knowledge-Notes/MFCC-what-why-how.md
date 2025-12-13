@@ -2,12 +2,13 @@
 title: MFCC听觉感知特征概念与实践
 date: 2025-12-06
 updated: 2025-12-06
-categories: 声学知识
+categories: 知识笔记
 tags:
   - 笔记
   - 音频
   - 概念
   - python
+  - 声学知识
 ---
 ## MFCC是干什么的
 

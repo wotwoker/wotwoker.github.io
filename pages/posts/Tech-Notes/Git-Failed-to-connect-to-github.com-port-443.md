@@ -7,6 +7,7 @@ tags:
   - Git
   - 笔记
   - 代理
+  - 教程
 ---
 ## 现象描述：   
 - Failed to connect to github.com port 443 after 21100 ms: Could not connect to server。
