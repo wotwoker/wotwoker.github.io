@@ -19,3 +19,5 @@ tags:
 
 年轻人，冲就完了，共勉。
 ![sky and light](./pic/fe6b9aa489bbb7b6cce563bb5fafb5d5_720.jpg)
+
+——2025年12月22日 深夜
