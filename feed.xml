@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Flowing Lantingarden</title>
+        <link>https://wotwoker.github.io/</link>
+        <description>Welcome to Kongliu-chan's Lantingarden</description>
+        <lastBuildDate>Thu, 01 Jan 2026 04:34:25 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <image>
+            <title>Flowing Lantingarden</title>
+            <url>https://wotwoker.github.io/sadaharu.jpg</url>
+            <link>https://wotwoker.github.io/</link>
+        </image>
+        <copyright>CC BY-NC-SA 4.0 2026 © 空流酱</copyright>
+        <atom:link href="https://wotwoker.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[我的2025年度总结]]></title>
+            <link>https://wotwoker.github.io/posts/Life-Essays/2025-annual-summary</link>
+            <guid isPermaLink="false">https://wotwoker.github.io/posts/Life-Essays/2025-annual-summary</guid>
+            <pubDate>Thu, 01 Jan 2026 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>2026年1月1号的凌晨1点，电脑现在放着 Cowboy Bebop 的插曲 <em>Rain</em>，因为还没睡觉，所以应该还算是2025的最后一天，写一下2025年年终总结吧。</p>
+<p>2025年是突破的一年，在许</p>
+<br/><p>访问 <a href="https://wotwoker.github.io/posts/Life-Essays/2025-annual-summary" target="_blank">https://wotwoker.github.io/posts/Life-Essays/2025-annual-summary</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (空流酱)</author>
+        </item>
+        <item>
+            <title><![CDATA[处在充满焦虑与压力的社会中，你该怎么办？]]></title>
+            <link>https://wotwoker.github.io/posts/Life-Essays/What-should-you-do-in-a-society-full-of-anxiety-and-pressure</link>
+            <guid isPermaLink="false">https://wotwoker.github.io/posts/Life-Essays/What-should-you-do-in-a-society-full-of-anxiety-and-pressure</guid>
+            <pubDate>Mon, 22 Dec 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>最近一段时间，一直都有一股焦虑的情绪在心中涌现。虽然表面上日子还是照样过，学习、健身、弹吉他、看小说、睡觉，一个不拉，周末偶尔出去玩玩，但是内心却越来越紧绷，无形的压力也越来越大，一直不能真正放松。我</p>
+<br/><p>访问 <a href="https://wotwoker.github.io/posts/Life-Essays/What-should-you-do-in-a-society-full-of-anxiety-and-pressure" target="_blank">https://wotwoker.github.io/posts/Life-Essays/What-should-you-do-in-a-society-full-of-anxiety-and-pressure</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (空流酱)</author>
+        </item>
+        <item>
+            <title><![CDATA[使用大模型制作自己的anki单词牌组——简易上手教程]]></title>
+            <link>https://wotwoker.github.io/posts/Tech-Notes/using-llm-to-simply-bulid-your-anki-deck</link>
+            <guid isPermaLink="false">https://wotwoker.github.io/posts/Tech-Notes/using-llm-to-simply-bulid-your-anki-deck</guid>
+            <pubDate>Sat, 13 Dec 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h2>前言</h2>
+<blockquote>
+<p>前言题外话，这两天经常在知乎刷到叶神的文章，尤其是下面这篇，非常有意思<br>
+[我爬取了 Thoughts Memo 和 Jarrett Ye 共 1903 篇回答 - 知乎](ht</p>
+</blockquote>
+<br/><p>访问 <a href="https://wotwoker.github.io/posts/Tech-Notes/using-llm-to-simply-bulid-your-anki-deck" target="_blank">https://wotwoker.github.io/posts/Tech-Notes/using-llm-to-simply-bulid-your-anki-deck</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (空流酱)</author>
+        </item>
+        <item>
+            <title><![CDATA[Introductory C Programming Specialization 学习笔记——Course 3: Pointers, Arrays, and Recursion]]></title>
+            <link>https://wotwoker.github.io/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course3</link>
+            <guid isPermaLink="false">https://wotwoker.github.io/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course3</guid>
+            <pubDate>Fri, 12 Dec 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<blockquote>
+<p>course3 mindmap:<br>
+<img src="./pic/mindmap3.svg" alt="课程3思维导图"></p>
+</blockquote>
+<h2>Module 1: Pointers</h2>
+<h3>Pointer Basics</h3>
+<p>Pointers</p>
+<br/><p>访问 <a href="https://wotwoker.github.io/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course3" target="_blank">https://wotwoker.github.io/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course3</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (空流酱)</author>
+        </item>
+        <item>
+            <title><![CDATA[MFCC听觉感知特征概念与实践]]></title>
+            <link>https://wotwoker.github.io/posts/Knowledge-Notes/MFCC-what-why-how</link>
+            <guid isPermaLink="false">https://wotwoker.github.io/posts/Knowledge-Notes/MFCC-what-why-how</guid>
+            <pubDate>Sat, 06 Dec 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h2>MFCC是干什么的</h2>
+<p>MFCC（Mel-Frequency Cepstral Coefficients，Mel 频率倒谱系数），语音信号处理中<strong>最常用的特征提取方法之一</strong>，核心是模拟人类听觉</p>
+<br/><p>访问 <a href="https://wotwoker.github.io/posts/Knowledge-Notes/MFCC-what-why-how" target="_blank">https://wotwoker.github.io/posts/Knowledge-Notes/MFCC-what-why-how</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (空流酱)</author>
+        </item>
+        <item>
+            <title><![CDATA[Introductory C Programming Specialization 学习笔记——Course 2: Writing, Running, and Fixing Code in C]]></title>
+            <link>https://wotwoker.github.io/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course2</link>
+            <guid isPermaLink="false">https://wotwoker.github.io/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course2</guid>
+            <pubDate>Tue, 02 Dec 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<blockquote>
+<p>mindmap:<br>
+<img src="./pic/mindmap2.svg" alt="课程3思维导图"></p>
+</blockquote>
+<h2>Module 1: Writing Code</h2>
+<h3>Revisiting four Steps of d</h3>
+<br/><p>访问 <a href="https://wotwoker.github.io/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course2" target="_blank">https://wotwoker.github.io/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course2</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (空流酱)</author>
+        </item>
+        <item>
+            <title><![CDATA[Git网络代理配置—Git连不上GitHub的443端口]]></title>
+            <link>https://wotwoker.github.io/posts/Tech-Notes/Git-Failed-to-connect-to-github.com-port-443</link>
+            <guid isPermaLink="false">https://wotwoker.github.io/posts/Tech-Notes/Git-Failed-to-connect-to-github.com-port-443</guid>
+            <pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h2>现象描述：</h2>
+<ul>
+<li>Failed to connect to <a href="http://github.com">github.com</a> port 443 after 21100 ms: Could not connect to server。</li>
+</ul>
+<br/><p>访问 <a href="https://wotwoker.github.io/posts/Tech-Notes/Git-Failed-to-connect-to-github.com-port-443" target="_blank">https://wotwoker.github.io/posts/Tech-Notes/Git-Failed-to-connect-to-github.com-port-443</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (空流酱)</author>
+        </item>
+        <item>
+            <title><![CDATA[Introductory C Programming Specialization 学习笔记——Course 1: Programming Fundamentals]]></title>
+            <link>https://wotwoker.github.io/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course1</link>
+            <guid isPermaLink="false">https://wotwoker.github.io/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course1</guid>
+            <pubDate>Sun, 23 Nov 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<blockquote>
+<p><strong>课程网站</strong>：[<a href="https://www.coursera.org/specializations/c-programming">https://www.coursera.org/specializations/c-programming</a>](<a href="https://www.coursera.org/speciali">https://www.coursera.org/speciali</a></p>
+</blockquote>
+<br/><p>访问 <a href="https://wotwoker.github.io/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course1" target="_blank">https://wotwoker.github.io/posts/Tech-Notes/Introductory-C-Programming-Specialization-Course1</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (空流酱)</author>
+        </item>
+        <item>
+            <title><![CDATA[Valaxy博客框架使用笔记]]></title>
+            <link>https://wotwoker.github.io/posts/Tech-Notes/Hello-Valaxy</link>
+            <guid isPermaLink="false">https://wotwoker.github.io/posts/Tech-Notes/Hello-Valaxy</guid>
+            <pubDate>Sat, 22 Nov 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<blockquote>
+<p>官方教程：<a href="https://valaxy.site/guide/getting-started">开始 - VALAXY</a><br>
+其他参考教程：[超可爱！使用 Valaxy 搭建自己的博客 - -</p>
+</blockquote>
+<br/><p>访问 <a href="https://wotwoker.github.io/posts/Tech-Notes/Hello-Valaxy" target="_blank">https://wotwoker.github.io/posts/Tech-Notes/Hello-Valaxy</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (空流酱)</author>
+        </item>
+        <item>
+            <title><![CDATA[我真的好喜欢RADWIMPS--20周年快乐]]></title>
+            <link>https://wotwoker.github.io/posts/Life-Essays/I-really-love-RADWIMPS——happy-20th-anniversary!</link>
+            <guid isPermaLink="false">https://wotwoker.github.io/posts/Life-Essays/I-really-love-RADWIMPS——happy-20th-anniversary!</guid>
+            <pubDate>Fri, 21 Nov 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>过两天2025年11月23日是RADWIMPS乐队成立20周年纪念日，最近这段时间网上的纪念活动也如火如荼，最为劲爆的就是前两天19号放出的 _Dear Jubilee -RADWIMPS TRIB</p>
+<br/><p>访问 <a href="https://wotwoker.github.io/posts/Life-Essays/I-really-love-RADWIMPS——happy-20th-anniversary!" target="_blank">https://wotwoker.github.io/posts/Life-Essays/I-really-love-RADWIMPS——happy-20th-anniversary!</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (空流酱)</author>
+        </item>
+        <item>
+            <title><![CDATA[我喜欢的是轻百吗？]]></title>
+            <link>https://wotwoker.github.io/posts/Life-Essays/Am-I-into-light-yuri</link>
+            <guid isPermaLink="false">https://wotwoker.github.io/posts/Life-Essays/Am-I-into-light-yuri</guid>
+            <pubDate>Tue, 04 Nov 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>最近在看《琉璃的宝石》，看到有挺多人讨论，尤其是“因为是轻百才有这么高的分”的相关言论，今天带着这个问题边看边想，我有了自己的结论：</p>
+<p>_<em>轻百很好，但喜欢这个番或者这种番并不是因为轻百。</em></p>
+<br/><p>访问 <a href="https://wotwoker.github.io/posts/Life-Essays/Am-I-into-light-yuri" target="_blank">https://wotwoker.github.io/posts/Life-Essays/Am-I-into-light-yuri</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (空流酱)</author>
+        </item>
+        <item>
+            <title><![CDATA[github pages + Quartz + Obsidian 小白终极博客搭建教程]]></title>
+            <link>https://wotwoker.github.io/posts/Tech-Notes/githubpages-Quartz-Obsidian-to-bulid-your-Blog</link>
+            <guid isPermaLink="false">https://wotwoker.github.io/posts/Tech-Notes/githubpages-Quartz-Obsidian-to-bulid-your-Blog</guid>
+            <pubDate>Sun, 12 Oct 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h2>准备工作</h2>
+<ol>
+<li>安装 Node.js，同时安装npm，自行搜索最新的安装以及配置教程。
+<blockquote>
+<p>我是参考了[2025版 Node.js 下载安装及环境配置详细教程【保姆级】_nodejs2025淘宝</p>
+</blockquote>
+</li>
+</ol>
+<br/><p>访问 <a href="https://wotwoker.github.io/posts/Tech-Notes/githubpages-Quartz-Obsidian-to-bulid-your-Blog" target="_blank">https://wotwoker.github.io/posts/Tech-Notes/githubpages-Quartz-Obsidian-to-bulid-your-Blog</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (空流酱)</author>
+        </item>
+    </channel>
+</rss>
